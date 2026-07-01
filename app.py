@@ -1,118 +1,131 @@
 import streamlit as st
+from pathlib import Path
 
-# ----------------------------------------------------
+# ==============================
 # PAGE CONFIG
-# ----------------------------------------------------
+# ==============================
 
 st.set_page_config(
-    page_title="NASH",
+    page_title="NASH Login",
     page_icon="🏥",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-# ----------------------------------------------------
-# HIDE STREAMLIT DEFAULT UI
-# ----------------------------------------------------
+# ==============================
+# LOAD CSS
+# ==============================
+
+def load_css():
+    css_file = Path("styles/style.css")
+
+    if css_file.exists():
+        with open(css_file) as f:
+            st.markdown(
+                f"<style>{f.read()}</style>",
+                unsafe_allow_html=True
+            )
+
+load_css()
+
+# ==============================
+# HIDE STREAMLIT
+# ==============================
 
 st.markdown("""
 <style>
 
-#MainMenu {visibility:hidden;}
-footer {visibility:hidden;}
-header {visibility:hidden;}
+#MainMenu{
+visibility:hidden;
+}
 
-[data-testid="stSidebar"]{
+header{
+visibility:hidden;
+}
+
+footer{
+visibility:hidden;
+}
+
+[data-testid="collapsedControl"]{
 display:none;
 }
 
-.stApp{
-background:linear-gradient(135deg,#050505,#0A0A0A,#111111,#1A1A1A);
-}
-
-.block-container{
-padding-top:2rem;
-padding-bottom:2rem;
-padding-left:4rem;
-padding-right:4rem;
+section[data-testid="stSidebar"]{
+display:none;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# ----------------------------------------------------
-# TITLE
-# ----------------------------------------------------
+# ==============================
+# PAGE
+# ==============================
 
-left,right = st.columns([7,3])
+left, right = st.columns([6,4], gap="large")
+
+# =====================================
+# LEFT SIDE
+# =====================================
 
 with left:
 
-    st.image("logo.png", width=320)
+    st.image(
+        "assets/logo.png",
+        width=300
+    )
 
     st.markdown("""
-    <h1 style="
-    color:white;
-    font-size:72px;
-    margin-bottom:0px;
-    ">
-    NASH
-    </h1>
+    <div class="hero-title">
+        NASH
+    </div>
     """, unsafe_allow_html=True)
 
     st.markdown("""
-    <h3 style="
-    color:#B8B8B8;
-    margin-top:0px;
-    font-weight:400;
-    ">
-    Navigable Autonomous Sensor HealthHub
-    </h3>
+    <div class="hero-subtitle">
+        Navigable Autonomous Sensor HealthHub
+    </div>
     """, unsafe_allow_html=True)
 
     st.markdown("""
-    <p style="
-    color:#8E8E8E;
-    font-size:22px;
-    ">
-    Autonomous Healthcare.
-    <br>
-    Anytime.
-    <br>
-    Anywhere.
-    </p>
+    <div class="hero-text">
+        Autonomous Healthcare.<br>
+        Anytime.<br>
+        Anywhere.
+    </div>
     """, unsafe_allow_html=True)
 
     st.write("")
 
-    st.image("robot.png", width=520)
+    st.image(
+        "assets/robot.png",
+        width=520
+    )
 
-# ----------------------------------------------------
-# LOGIN CARD
-# ----------------------------------------------------
+# =====================================
+# RIGHT SIDE
+# =====================================
 
 with right:
 
     st.markdown("""
-    <div style="
-    background:#161616;
-    border-radius:20px;
-    padding:35px;
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0px 0px 30px rgba(152,9,23,.20);
-    ">
+    <div class="login-card">
     """, unsafe_allow_html=True)
 
     st.markdown("""
-    <h2 style="color:white;">
-    Welcome Back
-    </h2>
+    <div class="login-title">
+        Welcome Back
+    </div>
     """, unsafe_allow_html=True)
 
-    st.caption("Sign in to continue")
+    st.markdown("""
+    <div class="login-subtitle">
+        Sign in to access your NASH dashboard
+    </div>
+    """, unsafe_allow_html=True)
 
     st.text_input(
-        "Email / Patient ID",
+        "Email or Patient ID",
         placeholder="Enter your email"
     )
 
@@ -122,68 +135,70 @@ with right:
         placeholder="••••••••"
     )
 
-    st.checkbox("Remember Me")
+    col1, col2 = st.columns([1,1])
+
+    with col1:
+        st.checkbox("Remember Me")
+
+    with col2:
+        st.markdown(
+            "<p style='text-align:right;color:#980917;'>Forgot Password?</p>",
+            unsafe_allow_html=True
+        )
 
     st.button(
         "LOGIN",
         use_container_width=True
     )
 
-    st.write("")
-
     st.markdown(
-        "<center style='color:#888;'>──────── OR ────────</center>",
+        "<div class='divider'>──────── OR ────────</div>",
         unsafe_allow_html=True
     )
-
-    st.write("")
 
     st.button(
         "Login with QR Code",
         use_container_width=True
     )
 
-    st.write("")
-
     st.markdown("""
-    <center>
-
-    <span style="color:#B8B8B8;">
-    Forgot Password?
-    </span>
-
-    <br><br>
-
-    <span style="
-    color:#980917;
-    font-weight:bold;
-    cursor:pointer;
-    ">
-    Create Account
-    </span>
-
-    </center>
+    <div class="create-account">
+        Don't have an account?
+        <span>Create Account</span>
+    </div>
     """, unsafe_allow_html=True)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-# ----------------------------------------------------
+# =====================================
 # FOOTER
-# ----------------------------------------------------
+# =====================================
 
 st.write("")
 st.write("")
 
-c1,c2,c3,c4 = st.columns(4)
+c1, c2, c3, c4 = st.columns(4)
 
 with c1:
-    st.info("🤖 AI Powered")
+    st.markdown(
+        "<div class='footer-box'>🤖 AI Powered</div>",
+        unsafe_allow_html=True
+    )
 
 with c2:
-    st.success("🔒 Secure Data")
+    st.markdown(
+        "<div class='footer-box'>🛡 Secure Data</div>",
+        unsafe_allow_html=True
+    )
 
 with c3:
-    st.warning("🏥 Hospital Ready")
+    st.markdown(
+        "<div class='footer-box'>🏥 Hospital Ready</div>",
+        unsafe_allow_html=True
+    )
 
 with c4:
-    st.info("📡 Real-Time Monitoring")
+    st.markdown(
+        "<div class='footer-box'>📡 Real-Time Monitoring</div>",
+        unsafe_allow_html=True
+    )
