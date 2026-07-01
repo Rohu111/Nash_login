@@ -344,6 +344,64 @@ img:hover{
 
     padding:1.5rem;
 
+} 
 }
+/* ===============================
+   HERO SECTION
+================================ */
+
+.hero-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    height:85vh;
+
+}
+
+.hero-title{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:88px;
+
+    font-weight:700;
+
+    letter-spacing:5px;
+
+    color:#F5F5F5;
+
+    margin-top:25px;
+
+    margin-bottom:5px;
+
+}
+
+.hero-subtitle{
+
+    color:#E0E0E0;
+
+    font-size:28px;
+
+    line-height:38px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-text{
+
+    color:#9C9C9C;
+
+    font-size:20px;
+
+    line-height:34px;
+
+    margin-bottom:35px;
 
 }
