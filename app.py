@@ -116,26 +116,18 @@ with right:
 
     st.markdown("""
     <div class="login-card">
+        <div class="login-header">
+            <h2>Welcome Back</h2>
+            <p>Sign in to access your NASH Dashboard</p>
+        </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="login-title">
-        Welcome Back
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="login-subtitle">
-        Sign in to access your NASH dashboard
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.text_input(
-        "Email or Patient ID",
+    email = st.text_input(
+        "Email / Patient ID",
         placeholder="Enter your email"
     )
 
-    st.text_input(
+    password = st.text_input(
         "Password",
         type="password",
         placeholder="••••••••"
@@ -148,33 +140,26 @@ with right:
 
     with col2:
         st.markdown(
-            "<p style='text-align:right;color:#980917;'>Forgot Password?</p>",
+            "<p class='forgot-link'>Forgot Password?</p>",
             unsafe_allow_html=True
         )
 
-    st.button(
-        "LOGIN",
-        use_container_width=True
-    )
+    st.button("LOGIN", use_container_width=True)
 
     st.markdown(
         "<div class='divider'>──────── OR ────────</div>",
         unsafe_allow_html=True
     )
 
-    st.button(
-        "Login with QR Code",
-        use_container_width=True
-    )
+    st.button("LOGIN WITH QR CODE", use_container_width=True)
 
     st.markdown("""
-    <div class="create-account">
-        Don't have an account?
-        <span>Create Account</span>
+        <div class="create-account">
+            Don't have an account?
+            <span>Create Account</span>
+        </div>
     </div>
     """, unsafe_allow_html=True)
-
-    st.markdown("</div>", unsafe_allow_html=True)
 
 # =====================================
 # FOOTER
