@@ -70,9 +70,11 @@ left, right = st.columns([6,4], gap="large")
 
 with left:
 
+    st.markdown("<div class='hero-section'>", unsafe_allow_html=True)
+
     st.image(
         "assets/logo.png",
-        width=300
+        width=280
     )
 
     st.markdown("""
@@ -83,7 +85,8 @@ with left:
 
     st.markdown("""
     <div class="hero-subtitle">
-        Navigable Autonomous Sensor HealthHub
+        Navigable Autonomous<br>
+        Sensor HealthHub
     </div>
     """, unsafe_allow_html=True)
 
@@ -95,12 +98,15 @@ with left:
     </div>
     """, unsafe_allow_html=True)
 
-    st.write("")
+    st.markdown("<br>", unsafe_allow_html=True)
 
     st.image(
         "assets/robot.png",
-        width=520
+        width=430
     )
+
+    st.markdown("</div>", unsafe_allow_html=True)
+    
 
 # =====================================
 # RIGHT SIDE
