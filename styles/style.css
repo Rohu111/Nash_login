@@ -1,1 +1,349 @@
+/* ==========================================================
+   NASH - Login Theme
+   YORO | Yuga Of Robotics Optimization
+========================================================== */
 
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* -------------------------
+   Global
+------------------------- */
+
+html,
+body,
+.stApp{
+
+    background:linear-gradient(
+        135deg,
+        #050505 0%,
+        #0A0A0A 35%,
+        #111111 70%,
+        #1A1A1A 100%
+    );
+
+    color:#F5F5F5;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+/* Remove top spacing */
+
+.block-container{
+
+    padding-top:2rem;
+    padding-bottom:2rem;
+    padding-left:4rem;
+    padding-right:4rem;
+
+}
+
+/* -------------------------
+   Hero
+------------------------- */
+
+.hero-title{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:72px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+    margin-top:25px;
+
+    margin-bottom:0;
+
+    letter-spacing:4px;
+
+}
+
+.hero-subtitle{
+
+    color:#B8B8B8;
+
+    font-size:24px;
+
+    font-weight:300;
+
+    margin-top:12px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-text{
+
+    color:#8E8E8E;
+
+    font-size:22px;
+
+    line-height:40px;
+
+}
+
+/* -------------------------
+   Robot
+------------------------- */
+
+img{
+
+    user-select:none;
+
+}
+
+img:hover{
+
+    transition:.4s;
+
+    transform:scale(1.02);
+
+}
+
+/* -------------------------
+   Login Card
+------------------------- */
+
+.login-card{
+
+    background:rgba(22,22,22,.92);
+
+    border-radius:24px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:35px;
+
+    box-shadow:
+        0px 0px 40px rgba(152,9,23,.20);
+
+}
+
+/* -------------------------
+   Title
+------------------------- */
+
+.login-title{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.login-subtitle{
+
+    color:#B8B8B8;
+
+    margin-bottom:30px;
+
+    font-size:17px;
+
+}
+
+/* -------------------------
+   Inputs
+------------------------- */
+
+.stTextInput label{
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+.stTextInput input{
+
+    background:#151515;
+
+    color:white;
+
+    border-radius:12px;
+
+    border:1px solid #333333;
+
+    height:50px;
+
+}
+
+.stTextInput input:focus{
+
+    border:1px solid #980917;
+
+    box-shadow:0px 0px 10px rgba(152,9,23,.35);
+
+}
+
+/* -------------------------
+   Checkbox
+------------------------- */
+
+.stCheckbox{
+
+    color:#B8B8B8;
+
+}
+
+/* -------------------------
+   Buttons
+------------------------- */
+
+.stButton>button{
+
+    width:100%;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#980917;
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:17px;
+
+    transition:.35s;
+
+}
+
+.stButton>button:hover{
+
+    background:#B30D20;
+
+    box-shadow:
+        0px 0px 20px rgba(152,9,23,.45);
+
+}
+
+/* -------------------------
+   Divider
+------------------------- */
+
+.divider{
+
+    text-align:center;
+
+    color:#777777;
+
+    margin-top:18px;
+
+    margin-bottom:18px;
+
+    font-size:15px;
+
+}
+
+/* -------------------------
+   Create Account
+------------------------- */
+
+.create-account{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#B8B8B8;
+
+    font-size:15px;
+
+}
+
+.create-account span{
+
+    color:#980917;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+.create-account span:hover{
+
+    color:#B30D20;
+
+}
+
+/* -------------------------
+   Footer
+------------------------- */
+
+.footer-box{
+
+    background:#101010;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    padding:16px;
+
+    text-align:center;
+
+    color:#F5F5F5;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.footer-box:hover{
+
+    border:1px solid #980917;
+
+    box-shadow:
+        0px 0px 15px rgba(152,9,23,.25);
+
+}
+
+/* -------------------------
+   Responsive
+------------------------- */
+
+@media(max-width:900px){
+
+.hero-title{
+
+    font-size:52px;
+
+}
+
+.hero-subtitle{
+
+    font-size:18px;
+
+}
+
+.hero-text{
+
+    font-size:18px;
+
+}
+
+.login-title{
+
+    font-size:32px;
+
+}
+
+.block-container{
+
+    padding:1.5rem;
+
+}
+
+}
